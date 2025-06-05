@@ -3,24 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mojas Simunovic Portfolio</title>
-    <link rel="stylesheet" href="/reset.css" />
-    <link rel="stylesheet" href="/style.css" />
+    <title>Mojas Simunovic | Front-End Developer Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Mojaš Simunović Front-End Developer specializing in clean, accessible, and responsive websites using JavaScript, Angular, and CMS platforms."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Mojas Simunovic" />
+    <meta
+      name="keywords"
+      content="Frontend Developer, Mojaš Simunović, JavaScript Developer, Angular, HTML, CSS, SCSS, Portfolio, Umbraco, TYPO3, Contao"
+    />
+
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Mojas Simunovic | Front-End Developer" />
+    <meta
+      property="og:description"
+      content="Explore Mojaš Simunović's portfolio.Developer who is building performant, accessible, and user-friendly websites using modern web technologies."
+    />
+    <meta property="og:image" content="./assets/screencapture.png" />
+    <!-- Replace with actual hosted image -->
+    <meta property="og:url" content="https://your-domain.com" />
+    <!-- Replace when deployed -->
+    <meta property="og:site_name" content="Mojas Simunovic Portfolio" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Mojas Simunovic | Front-End Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Clean, responsive, and accessible websites built by Mojaš Simunović."
+    />
+    <meta name="twitter:image" content="./assets/screencapture.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/reset.css" />
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body class="container">
     <div class="light"></div>
     <header>
       <div class="banner">
         <h1>Mojas Simunovic</h1>
-        <h2>Front End Developer</h2>
+        <h2>Frontend Developer</h2>
         <p>
-          I build accessible, pixel-perfect digital experiences for the web.
+          Building accessible, pixel-perfect digital experiences for the web.
         </p>
       </div>
       <div class="nav">
@@ -66,12 +117,33 @@
             ></path>
           </svg>
         </a>
+        <a href="./assets/Mojas_Simunovic_CV.pdf" target="_blank">
+          <span class="sr-only">CV PDF</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            fill=""
+            version="1.1"
+            width="24px"
+            height="24px"
+            viewBox="0 0 43.916 43.916"
+            xml:space="preserve"
+          >
+            <g>
+              <path
+                d="M34.395,0H9.522c-2.762,0-5,2.239-5,5v33.916c0,2.761,2.238,5,5,5h24.871c2.762,0,5-2.239,5-5V5   C39.395,2.239,37.154,0,34.395,0z M9.208,16.855c0-1.172,0.951-2.121,2.121-2.121h0.742c-0.791-0.874-1.277-2.03-1.277-3.304   c0-2.723,2.209-4.931,4.932-4.931c2.725,0,4.932,2.207,4.932,4.932c0,1.272-0.486,2.429-1.279,3.303h0.709   c1.172,0,2.121,0.949,2.121,2.121v3.578c0,1.122-0.875,2.03-1.975,2.106h-9.051c-1.1-0.076-1.975-0.984-1.975-2.106V16.855   L9.208,16.855z M32.708,37.416h-21.5c-1.104,0-2-0.896-2-2s0.896-2,2-2h21.5c1.104,0,2,0.896,2,2S33.812,37.416,32.708,37.416z    M32.708,29.916h-21.5c-1.104,0-2-0.896-2-2s0.896-2,2-2h21.5c1.104,0,2,0.896,2,2S33.812,29.916,32.708,29.916z M32.708,22.416   h-6.5c-1.104,0-2-0.896-2-2c0-1.104,0.896-2,2-2h6.5c1.104,0,2,0.896,2,2C34.708,21.52,33.812,22.416,32.708,22.416z"
+              />
+            </g>
+          </svg>
+        </a>
       </div>
     </header>
     <main>
       <section class="intro" id="about">
-        <h2>About</h2>
-        <p>
+        <div class="title">
+          <h2>About</h2>
+        </div>
+        <p class="mt-0">
           Front-end developer with a strong passion for building clean,
           responsive, and user-friendly websites.
         </p>
@@ -83,17 +155,19 @@
           continuously aim to write maintainable, scalable code.
         </p>
         <p>
-          My experience spans international teams and clients, from
+          My experience spans across international teams and clients, from
           enterprise-level websites to internal tools. I've also mentored junior
           developers and contributed to internal tooling, like maintaining a
-          custom Webpack starter used across an organization.
+          custom starter.
         </p>
         <p>
           Outside of coding, I enjoy volleyball, kitesurfing, and a good book.
         </p>
       </section>
       <section class="experience" id="experience">
-        <h2>Experience</h2>
+        <div class="title">
+          <h2>Experience</h2>
+        </div>
         <div class="experience-card">
           <a
             href="https://www.vonheldenundgestalten.de/"
@@ -124,10 +198,10 @@
             </div>
 
             <p class="experience-description">
-              Developing Angular app for resource management with real-time
-              syncing.Built dynamic, user-focused websites using Vanilla
-              JavaScript with Contao and TYPO3 for German clients, including
-              global brands. Prioritized performance, animations, and
+              Developing Angular app for internal resource management with
+              real-time syncing.Built dynamic, user-focused websites using
+              Vanilla JavaScript with Contao and TYPO3 for German clients,
+              including global brands. Prioritized performance, animations, and
               accessibility using SCSS best practices. Collaborated with
               designers via Figma to deliver responsive, maintainable designs.
             </p>
@@ -140,6 +214,7 @@
               <span class="tag">SCSS</span>
               <span class="tag">Contao</span>
               <span class="tag">TYPO3</span>
+              <span class="tag">Figma</span>
             </div>
           </div>
         </div>
@@ -178,7 +253,6 @@
               for UK and Dutch clients. Improved a widely used Webpack starter
               and mentored interns on front-end best practices.
             </p>
-
             <div class="experience-tags">
               <span class="tag">JavaScript</span>
               <span class="tag">HTML</span>
@@ -187,51 +261,434 @@
               <span class="tag">Umbraco</span>
               <span class="tag">Salesforce</span>
               <span class="tag">TypeScript</span>
+              <span class="tag">Figma</span>
             </div>
           </div>
         </div>
       </section>
       <section class="projects" id="projects">
-        <h2>Projects</h2>
-        <div class="project-card">
-          <h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-            adipisci reprehenderit corporis assumenda ex, praesentium, est sequi
-            deserunt ipsam sit rerum impedit numquam provident magnam obcaecati
-            molestiae, quos nulla ea?
-          </h3>
+        <div class="title">
+          <h2>Projects</h2>
         </div>
-        <div class="project-card">
-          <h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-            adipisci reprehenderit corporis assumenda ex, praesentium, est sequi
-            deserunt ipsam sit rerum impedit numquam provident magnam obcaecati
-            molestiae, quos nulla ea?
-          </h3>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-img">
+              <img
+                src="./assets/goal-planner ap.webp"
+                alt="Project screenshot"
+              />
+            </div>
+            <h3 class="project-title">
+              <a
+                href="https://goal-tracker-6c18b.web.app/home"
+                target="_blank"
+                class=""
+                aria-label="Frontend Developer position"
+              >
+                Task Master
+
+                <svg
+                  class="external-link-icon"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+            </h3>
+            <p class="project-desc">
+              A comprehensive task management application built with Angular and
+              TypeScript. Features include task creation, priority setting,
+              deadline tracking, and progress monitoring with a clean, intuitive
+              interface.
+            </p>
+            <div class="project-tech">
+              <span class="tag">Angular</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">SCSS</span>
+              <span class="tag">Bootstrap</span>
+              <span class="tag">Material</span>
+            </div>
+          </div>
+          <div class="project-card no-scroll">
+            <div class="project-img">
+              <img
+                src="./assets/expense-tracker.webp"
+                alt="Project screenshot"
+              />
+            </div>
+            <h3 class="project-title">
+              <a
+                href="https://expense-tracker-8eb06.web.app/login"
+                target="_blank"
+                class=""
+                aria-label="Frontend Developer position"
+              >
+                Expense Tracker
+
+                <svg
+                  class="external-link-icon"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+            </h3>
+            <p class="project-desc">
+              Personal finance management tool that helps users track expenses,
+              categorize spending, and visualize financial data through
+              interactive charts and reports for better budget control.
+            </p>
+            <div class="project-tech">
+              <span class="tag">Angular</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Bootstrap</span>
+              <span class="tag">Material</span>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-img">
+              <img src="./assets/2.webp" alt="Project Website Screenshot" />
+            </div>
+            <h3 class="project-title">
+              <a
+                href="https://www.vonheldenundgestalten.de/"
+                target="_blank"
+                class=""
+                aria-label="Frontend Developer position"
+              >
+                Von Helden und Gestalten
+
+                <svg
+                  class="external-link-icon"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+            </h3>
+            <p class="project-desc">
+              Creative agency website built with Contao CMS, featuring
+              responsive design, accessibility compliance, and custom
+              animations. Designed with Figma for optimal user experience.
+            </p>
+            <div class="project-tech">
+              <span class="tag">Contao</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">SCSS</span>
+              <span class="tag">HTML</span>
+              <span class="tag">Accessibility</span>
+              <span class="tag">Figma</span>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-img">
+              <img src="./assets/1.webp" alt="Project Website Screenshot" />
+            </div>
+            <h3 class="project-title">
+              <a
+                href="https://www.diakonie-klinikum.de/"
+                target="_blank"
+                class=""
+                aria-label="Frontend Developer position"
+              >
+                Diakonie Klinikum
+                <svg
+                  class="external-link-icon"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+            </h3>
+            <p class="project-desc">
+              Healthcare facility website developed with Contao CMS and PHP
+              backend. Features patient information systems, complex search
+              system for departments and doctors, appointment contacts etc. Done
+              with special accent on accessibility and performance.
+            </p>
+            <div class="project-tech">
+              <span class="tag">Contao</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">SCSS</span>
+              <span class="tag">HTML</span>
+              <span class="tag">Figma</span>
+              <span class="tag">PHP</span>
+            </div>
+          </div>
+          <div class="project-card hidden">
+            <div class="project-img">
+              <img
+                src="./assets/6.webp"
+                alt="Project Website Screenshot"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="project-title">
+              <a
+                href="https://www.hema.nl/"
+                target="_blank"
+                class=""
+                aria-label="Frontend Developer position"
+              >
+                HEMA Netherlands
+                <svg
+                  class="external-link-icon"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+            </h3>
+            <p class="project-desc">
+              Frontend maintanance, updates and new features development on
+              Product Listing pages.
+            </p>
+            <div class="project-tech">
+              <span class="tag">Salesforce</span>
+              <span class="tag">React</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">SCSS</span>
+              <span class="tag">HTML</span>
+            </div>
+          </div>
+          <div class="project-card hidden">
+            <div class="project-img">
+              <img
+                src="./assets/3.webp"
+                alt="Project Website Screenshot"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="project-title">
+              <a
+                href="https://www.thebeautifulunleashedtruth.com/"
+                target="_blank"
+                class=""
+                aria-label="Frontend Developer position"
+              >
+                The Beautiful Unleashed Truth
+                <svg
+                  class="external-link-icon"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+            </h3>
+            <p class="project-desc">
+              Consultance agency website developed with Contao CMS and PHP
+              backend, Vanilla JavaScript and SCSS with special accent on small
+              animations, code maintainability and performance.
+            </p>
+            <div class="project-tech">
+              <span class="tag">Contao</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">SCSS</span>
+              <span class="tag">HTML</span>
+              <span class="tag">Figma</span>
+            </div>
+          </div>
+          <div class="project-card hidden">
+            <div class="project-img">
+              <img
+                src="./assets/4.webp"
+                alt="Project Website Screenshot"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="project-title">
+              <a
+                href="https://www.texoversum-hub.de/"
+                target="_blank"
+                class=""
+                aria-label="Frontend Developer position"
+              >
+                Texoversum
+                <svg
+                  class="external-link-icon"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+            </h3>
+            <p class="project-desc">
+              Healthcare facility website developed with Contao CMS and PHP
+              backend. Features patient information systems, appointment
+              booking, and responsive design for all devices.
+            </p>
+            <div class="project-tech">
+              <span class="tag">Contao</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">SCSS</span>
+              <span class="tag">HTML</span>
+              <span class="tag">Figma</span>
+              <span class="tag">PHP</span>
+            </div>
+          </div>
+          <div class="project-card hidden">
+            <div class="project-img">
+              <img
+                src="./assets/5.webp"
+                alt="Project Website Screenshot"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="project-title">Management agency</h3>
+            <p class="project-desc">
+              Project Maintanance and accessibility updates.
+            </p>
+            <div class="project-tech">
+              <span class="tag">TYPO3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Accessibility</span>
+              <span class="tag">SCSS</span>
+              <span class="tag">HTML</span>
+              <span class="tag">Figma</span>
+            </div>
+          </div>
+          <div class="project-card hidden">
+            <div class="project-img">
+              <img
+                src="./assets/7.webp"
+                alt="Project Website Screenshot"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="project-title">Healthcare Research Company</h3>
+            <p class="project-desc">
+              Healthcare research company website developed with Umbraco CMS,
+              JavaScript, SCSS and Handlebars for templating. Main focus on
+              pixel perfect styles and accessibility level AA.
+            </p>
+            <div class="project-tech">
+              <span class="tag">Umbraco</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Handlebars</span>
+              <span class="tag">Accessibility</span>
+              <span class="tag">SCSS</span>
+              <span class="tag">Figma</span>
+            </div>
+          </div>
+          <div class="project-card hidden">
+            <div class="project-img">
+              <img
+                src="./assets/8.webp"
+                alt="Project Website Screenshot"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="project-title">Agency</h3>
+            <p class="project-desc">
+              Project done with Umbraco CMS, JavaScript, SCSS and Handlebars for
+              templating.
+            </p>
+            <div class="project-tech">
+              <span class="tag">Umbraco</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Handlebars</span>
+              <span class="tag">SCSS</span>
+              <span class="tag">Figma</span>
+            </div>
+          </div>
+          <div class="project-card hidden">
+            <div class="project-img">
+              <img
+                src="./assets/9.webp"
+                alt="Project Website Screenshot"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="project-title">Telecommunications Company</h3>
+            <p class="project-desc">
+              Project done with Umbraco CMS for an African Telecommunications
+              Company. Technologies used were JavaScript, SCSS and Handlebars
+              for templating.
+            </p>
+            <div class="project-tech">
+              <span class="tag">Umbraco</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Handlebars</span>
+              <span class="tag">SCSS</span>
+              <span class="tag">Figma</span>
+            </div>
+          </div>
+          <div class="project-card hidden">
+            <div class="project-img">
+              <img
+                src="./assets/10.webp"
+                alt="Project Website Screenshot"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="project-title">Mining Company</h3>
+            <p class="project-desc">
+              Project done with Umbraco CMS. Technologies used were JavaScript,
+              SCSS and Handlebars for templating.
+            </p>
+            <div class="project-tech">
+              <span class="tag">Umbraco</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Handlebars</span>
+              <span class="tag">SCSS</span>
+              <span class="tag">Figma</span>
+            </div>
+          </div>
         </div>
-        <div class="project-card">
-          <h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-            adipisci reprehenderit corporis assumenda ex, praesentium, est sequi
-            deserunt ipsam sit rerum impedit numquam provident magnam obcaecati
-            molestiae, quos nulla ea?
-          </h3>
-        </div>
-        <div class="project-card">
-          <h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-            adipisci reprehenderit corporis assumenda ex, praesentium, est sequi
-            deserunt ipsam sit rerum impedit numquam provident magnam obcaecati
-            molestiae, quos nulla ea?
-          </h3>
-        </div>
-        <div class="project-card">
-          <h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-            adipisci reprehenderit corporis assumenda ex, praesentium, est sequi
-            deserunt ipsam sit rerum impedit numquam provident magnam obcaecati
-            molestiae, quos nulla ea?
-          </h3>
+        <div class="load-more-container">
+          <button class="load-more-btn" id="loadMoreBtn">
+            Load More Projects
+          </button>
         </div>
       </section>
     </main>

@@ -72,9 +72,12 @@ header {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
   padding-block: 6em;
   min-height: 100dvh;
+  @media (max-width: 1050px) {
+    flex-direction: column;
+    padding-block: 3.5em;
+  }
 }
 
 header {
@@ -87,11 +90,27 @@ header {
   min-height: 80svh;
   max-height: 100vh;
   width: 40%;
+  animation: fadeInSide 0.35s ease;
+  @media (max-width: 1050px) {
+    position: initial;
+    width: 100%;
+    min-height: fit-content;
+    padding-inline: 2em;
+  }
 }
+
 main {
   padding-inline: 3em;
   margin-left: auto;
   width: 50%;
+  @media (max-width: 1500px) {
+    width: 55%;
+  }
+  @media (max-width: 1050px) {
+    margin-top: 4em;
+    padding-inline: 2em;
+    width: 100%;
+  }
 }
 
 h1 {
@@ -105,7 +124,7 @@ h1 {
 }
 
 h2 {
-  margin-top: 0.75em;
+  margin-top: 0.55em;
   font-size: 1.25rem;
   line-height: 1.75rem;
   letter-spacing: -0.025em;
@@ -140,10 +159,28 @@ p {
 
 .nav {
   margin-bottom: auto;
+  @media (max-width: 1050px) {
+    display: none;
+  }
 }
 
-section h2 {
+section .title {
   display: none;
+  @media (max-width: 1050px) {
+    display: block;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(8px);
+    padding: 1em 2em;
+    margin-inline: -2em;
+    z-index: 50;
+  }
+}
+
+.title h2 {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .nav a {
@@ -205,6 +242,7 @@ section h2 {
 }
 .links a:hover svg {
   fill: #f1f1f1;
+  scale: 1.05;
 }
 
 section {
@@ -212,7 +250,22 @@ section {
 }
 
 .intro {
-  margin-bottom: 8em;
+  margin-bottom: 6em;
+  animation: fadeInUpAnimate 0.45s ease-out;
+  @media (max-width: 1050px) {
+    margin-bottom: 4em;
+  }
+}
+
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.experience {
+  margin-bottom: 6em;
+  @media (max-width: 1050px) {
+    margin-bottom: 4em;
+  }
 }
 
 .experience-card {
@@ -228,6 +281,20 @@ section {
   cursor: pointer;
   border: 1px solid transparent;
   overflow: hidden;
+  @media (max-width: 1050px) {
+    background: rgba(148, 163, 184, 0.05);
+    border-color: rgba(148, 163, 184, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3),
+      0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    .external-link-icon {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+    &::before {
+      opacity: 1;
+    }
+  }
 }
 
 .experience-card::before {
@@ -274,7 +341,8 @@ section {
   margin-bottom: 1rem;
 }
 
-.experience-title {
+.experience-title,
+.project-title {
   font-size: 1.1rem;
   font-weight: 500;
   line-height: 1.375;
@@ -328,7 +396,8 @@ section {
   z-index: 10;
 }
 
-.experience p {
+.experience p,
+.project-desc {
   font-size: 0.9rem;
 }
 
@@ -381,6 +450,163 @@ section {
   animation-delay: 0.3s;
 }
 
+.experience-card:focus-within {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+.projects-grid {
+  display: grid;
+  gap: 25px;
+}
+
+.project-card {
+  background-color: rgba(17, 34, 64, 0.4);
+  border-radius: 12px;
+  padding: 30px;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card.hidden {
+  display: none;
+}
+
+.project-card.fade-in {
+  animation: fadeInUp 0.45s ease forwards;
+}
+
+.project-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  background-color: rgba(17, 34, 64, 0.6);
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #64ffda, #64ffda);
+  transform: scaleX(0);
+  transition: transform 4s ease-in-out;
+}
+
+.no-scroll::before {
+  transition: transform 0.4s ease-in-out;
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+.project-card:hover .project-title a svg {
+  opacity: 1;
+  right: -2em;
+}
+
+.project-img {
+  width: 100%;
+  height: 20em; /* Fixed height for visible area */
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 1.5em;
+  @media (max-width: 1050px) {
+    overflow: scroll;
+  }
+}
+
+.project-card:not(.no-scroll) .project-img:hover img {
+  transform: translateY(calc(-100% + 20em));
+}
+
+.project-img img {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  transition: 4s ease-in-out;
+  display: block;
+  position: absolute;
+  transform: translateY(0);
+  @media (max-width: 1050px) {
+    object-fit: cover;
+  }
+}
+
+.project-title a {
+  position: relative;
+}
+
+.project-title a {
+  color: rgb(226 232 240 / 1);
+}
+
+.project-title a svg {
+  top: 50%;
+  transform: translateY(-50%);
+  right: -3em;
+  opacity: 0;
+  transition: 0.4s ease;
+  path {
+    stroke: rgb(226 232 240 / 1);
+  }
+  @media (max-width: 1050px) {
+    opacity: 1;
+    right: -2em;
+  }
+}
+
+.project-tech {
+  margin-top: 1em;
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+}
+
+.load-more-container {
+  display: flex;
+  margin-top: 2em;
+}
+
+.load-more-btn {
+  background: transparent;
+  margin-inline: auto;
+  border: 2px solid #64ffda;
+  color: #64ffda;
+  padding: 15px 30px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+.load-more-btn:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
+}
+
+.load-more-btn.hidden {
+  display: none;
+}
+
+@keyframes fadeInSide {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @keyframes fadeInUp {
   to {
     opacity: 1;
@@ -388,7 +614,13 @@ section {
   }
 }
 
-.experience-card:focus-within {
-  outline: 2px solid #60a5fa;
-  outline-offset: 2px;
+@keyframes fadeInUpAnimate {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
