@@ -1,7 +1,4 @@
-// var noInitial = false;
-
 function linkActiveToggle() {
-  const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".js-link");
 
   function removeActiveClasses() {
@@ -9,61 +6,36 @@ function linkActiveToggle() {
   }
 
   function setActiveLink(targetId) {
-    const activeLink = document.querySelector(`a[href="#${targetId}"]`);
+    const activeLink = document.querySelector(`#${targetId}`);
     if (activeLink) {
       removeActiveClasses();
       activeLink.classList.add("active");
     }
   }
 
-  const observerOptions = {
-    root: null,
-    rootMargin: "-10% 0px -60% 0px",
-    threshold: [0.01, 0.3, 0.01],
-  };
+  window.addEventListener("scroll", () => {
+    const scrollPosition = window.scrollY;
 
-  let observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        setActiveLink(entry.target.id);
-      }
-    });
-  }, observerOptions);
-
-  function initializeObserver() {
-    if (observer) {
-      observer.disconnect();
+    if (scrollPosition < 350) {
+      onScrollBelow350();
+    } else if (scrollPosition >= 350 && scrollPosition < 1000) {
+      onScrollBetween350And1000();
+    } else {
+      onScrollAbove1000();
     }
-    observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveLink(entry.target.id);
-        }
-      });
-    }, observerOptions);
-    const currentSections = document.querySelectorAll("section[id]");
-    currentSections.forEach((section) => {
-      observer.observe(section);
-    });
-  }
-  initializeObserver();
-  window.reinitializeObserver = initializeObserver;
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute("href").substring(1);
-      const targetSection = document.getElementById(targetId);
-
-      if (targetSection) {
-        targetSection.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-        setActiveLink(targetId);
-      }
-    });
   });
+
+  function onScrollBelow350() {
+    setActiveLink("about-link");
+  }
+
+  function onScrollBetween350And1000() {
+    setActiveLink("experience-link");
+  }
+
+  function onScrollAbove1000() {
+    setActiveLink("projects-link");
+  }
 }
 
 function createSpotlightInit() {
@@ -174,12 +146,7 @@ function loadMoreProjects() {
       } else {
         loadMoreBtn.textContent = `Load More Projects (${remainingProjects.length} remaining)`;
       }
-
-      // Reinitialize the observer after projects are loaded
-      if (window.reinitializeObserver) {
-        window.reinitializeObserver();
-      }
-    }, 600); // Wait a bit longer to ensure all animations complete
+    }, 600);
   }
 
   loadMoreBtn.addEventListener("click", showNextBatch);

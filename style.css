@@ -209,17 +209,30 @@ section .title {
   }
 }
 
-.nav a:hover span {
-  width: 3rem;
-}
-
-.nav a:hover,
 .nav .active {
   padding-left: 4rem;
   color: #f1f1f1;
   span {
     width: 3rem;
     background-color: #f1f1f1;
+  }
+}
+
+@media (hover: hover) {
+  .nav a:hover span {
+    width: 3rem;
+  }
+}
+
+@media (hover: hover) {
+  .nav a:hover,
+  .nav .active {
+    padding-left: 4rem;
+    color: #f1f1f1;
+    span {
+      width: 3rem;
+      background-color: #f1f1f1;
+    }
   }
 }
 
@@ -250,9 +263,12 @@ section .title {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.35s;
 }
-.links a:hover svg {
-  fill: #f1f1f1;
-  scale: 1.05;
+
+@media (hover: hover) {
+  .links a:hover svg {
+    fill: #f1f1f1;
+    scale: 1.05;
+  }
 }
 
 section {
@@ -321,16 +337,20 @@ section {
   transition: opacity 0.3s ease;
 }
 
-.experience-card:hover::before {
-  opacity: 1;
+@media (hover: hover) {
+  .experience-card:hover::before {
+    opacity: 1;
+  }
 }
 
-.experience-card:hover {
-  background: rgba(148, 163, 184, 0.05);
-  border-color: rgba(148, 163, 184, 0.1);
-  transform: translateY(-2px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3),
-    0 10px 10px -5px rgba(0, 0, 0, 0.2);
+@media (hover: hover) {
+  .experience-card:hover {
+    background: rgba(148, 163, 184, 0.05);
+    border-color: rgba(148, 163, 184, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3),
+      0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .experience-timeline {
@@ -362,8 +382,10 @@ section {
   text-transform: none;
 }
 
-.experience-card:hover .experience-title {
-  color: rgb(94 234 212 / 1);
+@media (hover: hover) {
+  .experience-card:hover .experience-title {
+    color: rgb(94 234 212 / 1);
+  }
 }
 
 .experience-company {
@@ -395,9 +417,11 @@ section {
   transition: all 0.3s ease;
 }
 
-.experience-card:hover .tag {
-  background: rgba(59, 130, 246, 0.15);
-  border-color: rgba(59, 130, 246, 0.3);
+@media (hover: hover) {
+  .experience-card:hover .tag {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
+  }
 }
 
 .experience-link {
@@ -423,9 +447,11 @@ section {
   transform: translate(4px, -4px);
 }
 
-.experience-card:hover .external-link-icon {
-  opacity: 1;
-  transform: translate(0, 0);
+@media (hover: hover) {
+  .experience-card:hover .external-link-icon {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 }
 
 /* Responsive design */
@@ -491,9 +517,11 @@ section {
   animation: fadeInUp 0.45s ease forwards;
 }
 
-.project-card:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  background-color: rgba(17, 34, 64, 0.6);
+@media (hover: hover) {
+  .project-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    background-color: rgba(17, 34, 64, 0.6);
+  }
 }
 
 .project-card::before {
@@ -512,18 +540,22 @@ section {
   transition: transform 0.4s ease-in-out;
 }
 
-.project-card:hover::before {
-  transform: scaleX(1);
+@media (hover: hover) {
+  .project-card:hover::before {
+    transform: scaleX(1);
+  }
 }
 
-.project-card:hover .project-title a svg {
-  opacity: 1;
-  right: -2em;
+@media (hover: hover) {
+  .project-card:hover .project-title a svg {
+    opacity: 1;
+    right: -2em;
+  }
 }
 
 .project-img {
   width: 100%;
-  height: 20em; /* Fixed height for visible area */
+  aspect-ratio: 16/9;
   overflow: hidden;
   position: relative;
   cursor: pointer;
@@ -533,8 +565,10 @@ section {
   }
 }
 
-.project-card:not(.no-scroll) .project-img:hover img {
-  transform: translateY(calc(-100% + 20em));
+@media (hover: hover) {
+  .project-card:not(.no-scroll) .project-img:hover img {
+    transform: translateY(calc(-100% + 20em));
+  }
 }
 
 .project-img img {
@@ -599,10 +633,12 @@ section {
   font-family: inherit;
 }
 
-.load-more-btn:hover {
-  background-color: rgba(100, 255, 218, 0.1);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
+@media (hover: hover) {
+  .load-more-btn:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
+  }
 }
 
 .load-more-btn.hidden {
