@@ -558,7 +558,6 @@ section {
   aspect-ratio: 16/9;
   overflow: hidden;
   position: relative;
-  cursor: pointer;
   margin-bottom: 1.5em;
   @media (max-width: 1050px) {
     overflow: scroll;
@@ -566,7 +565,7 @@ section {
 }
 
 @media (hover: hover) {
-  .project-card:not(.no-scroll) .project-img:hover img {
+  .project-card:not(.no-scroll):hover img {
     transform: translateY(calc(-100% + 20em));
   }
 }
